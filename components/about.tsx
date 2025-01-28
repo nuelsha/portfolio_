@@ -33,7 +33,7 @@ export function About() {
       <div className="w-full max-w-6xl py-24">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-gray-900 dark:text-white">About Me</h2>
         <p className="text-gray-600 dark:text-gray-100 mb-16 max-w-3xl mx-auto text-center leading-relaxed">
-          I'm an Intermediate Flutter and Web Developer passionate about building innovative solutions and solving
+          I'm an Expert Flutter and Web Developer passionate about building innovative solutions and solving
           real-world problems. With a strong focus on clean design and functionality, I'm dedicated to creating
           impactful digital experiences.
         </p>
