@@ -2,6 +2,7 @@
 
 import { Database, WavesIcon as FlutterWave, Monitor, Server } from "lucide-react"
 import { useInView } from "react-intersection-observer"
+import Image from "next/image"
 
 export function About() {
   const { ref, inView } = useInView({
@@ -12,7 +13,7 @@ export function About() {
   const skills = [
     {
       title: "Flutter Developer",
-      icon: FlutterWave,
+      icon: "/flutter.png",
       stack: ["Firebase", "SQLite", "Hive", "Provider", "BLoC", "Local Notifications"],
     },
     {
@@ -47,7 +48,11 @@ export function About() {
             >
               <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-300 group hover:shadow-lg dark:hover:shadow-2xl dark:hover:shadow-gray-900/50 bg-white dark:bg-gray-900">
                 <div className="mb-4">
-                  <skill.icon className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
+                  {typeof skill.icon === "string" ? (
+                    <Image src={skill.icon} width={24} height={24} alt={`${skill.title} icon`} className="text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
+                  ) : (
+                    <skill.icon className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
+                  )}
                 </div>
                 <h3 className="font-medium mb-4 text-gray-900 dark:text-white group-hover:text-gray-900">
                   {skill.title}
@@ -70,4 +75,3 @@ export function About() {
     </section>
   )
 }
-
